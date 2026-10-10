@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>BLOOD FLOORS — Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090909;
+      --panel: #111111;
+      --text: #f5f2f0;
+      --muted: #a9a2a0;
+      --red: #c51d2b;
+      --red-bright: #f02b3d;
+      --line: rgba(255,255,255,.10);
+      --max: 900px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: Inter, system-ui, sans-serif; line-height: 1.65;
+      overflow-x: hidden; position: relative;
+    }
+    #tech-canvas {
+      position: fixed; inset: 0; pointer-events: none; z-index: -1; opacity: 0.35;
+      image-rendering: pixelated;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -2;
+      background: radial-gradient(ellipse at 50% 0%, rgba(139, 10, 23, .15), transparent 55%),
+                  linear-gradient(180deg, #0b0a0a 0%, #090909 55%, #0d090a 100%);
+    }
+    a { color: inherit; text-decoration: none; cursor: pointer; }
+    .wrap { width: min(1160px, calc(100% - 44px)); margin-inline: auto; }
+    .content-wrap { position: relative; z-index: 10; width: min(var(--max), calc(100% - 44px)); margin-inline: auto; padding: 80px 0 120px; }
+    .topbar {
+      position: sticky; top: 0; z-index: 100; background: rgba(9,9,9,.88);
+      backdrop-filter: blur(16px); border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: .11em; font-size: .88rem; z-index: 101; }
+    .brand-logo {
+      width: 40px; height: 40px; object-fit: cover; border-radius: 6px;
+      border: 1px solid var(--red); box-shadow: 0 0 12px rgba(197,29,43,0.5);
+      background-color: #111; display: block;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 10px 16px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.24);
+      color: white; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem;
+      font-weight: 800; transition: background .2s, border-color .2s; cursor: pointer; z-index: 101;
+    }
+    .btn:hover { background: rgba(255,255,255,.1); border-color: white; }
+    
+    .eyebrow {
+      color: #ff5b67; text-transform: uppercase; letter-spacing: .24em;
+      font-size: .72rem; font-weight: 800; margin-bottom: 12px;
+    }
+    h1 {
+      font-family: "Barlow Condensed", sans-serif; font-size: clamp(3rem, 7vw, 5rem);
+      text-transform: uppercase; font-weight: 900; margin: 0 0 10px; line-height: .95;
+    }
+    .effective-date { color: var(--muted); font-size: .85rem; margin-bottom: 45px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+    
+    h2 {
+      font-family: "Barlow Condensed", sans-serif; font-size: 1.8rem;
+      text-transform: uppercase; font-weight: 800; margin-top: 40px; margin-bottom: 15px; color: #fff;
+    }
+    p, li { color: var(--muted); font-size: .95rem; margin-bottom: 16px; }
+    ul { padding-left: 20px; margin-bottom: 20px; }
+    li { margin-bottom: 8px; }
+
+    footer { position: relative; z-index: 100; padding: 35px 0; border-top: 1px solid var(--line); background: #090909; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .footer-copy { color: #817977; font-size: .75rem; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <canvas id="tech-canvas" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="CrimSonByteStudiosMonkeyLogo.png" alt="Blood Floors Logo" onerror="this.style.display='none'">
+        <span>CRIMSON BYTE / BLOOD FLOORS</span>
+      </a>
+      <a class="btn" href="index.html">← GO BACK TO HOME</a>
+    </div>
+  </header>
+
+  <main class="content-wrap">
+    <div class="eyebrow">DATA & SECURITY</div>
+    <h1>Privacy Policy</h1>
+    <div class="effective-date">Version: 2.0 | Effective Date: October 2, 2026 | Crimson Byte Studios LLC</div>
+
+    <div class="privacy-body">
+      <p>Crimson Byte Studios LLC ("Crimson Byte," "we," "us," or "our") respects user privacy and is committed to protecting information associated with users of Blood Floors and its related online services (collectively, the "Service").</p>
+      <p>This Privacy Policy explains what information Blood Floors may collect, how that information is used, how it may be shared, how it is protected, how long it may be retained, and the choices users may have regarding their information.</p>
+      <p>By using Blood Floors, you acknowledge the practices described in this Privacy Policy.</p>
+      <p>This Privacy Policy is separate from the Blood Floors Terms of Service. The Terms of Service govern your use of the Service, while this Privacy Policy governs our collection, use, storage, and disclosure of information.</p>
+
+      <h2>1. Scope and Who We Are</h2>
+      <p><strong>1.1</strong> This Privacy Policy explains how Crimson Byte Studios LLC ("Crimson Byte," "we," "us," or "our") collects, uses, shares, and protects information when you play Blood Floors and use its related online services.</p>
+      <p><strong>1.2</strong> This Privacy Policy is separate from our Terms of Service and governs data practices only. Our Terms of Service govern your use of the Service.</p>
+      <p><strong>1.3</strong> This Privacy Policy applies to information collected through Blood Floors and its related online services. It does not apply to websites, applications, platform stores, or other services operated independently by third parties, including platform stores and third-party services used by Blood Floors. Those services may have their own privacy policies and terms.</p>
+
+      <h2>2. Information We Collect</h2>
+      <p>Blood Floors collects and processes information necessary to operate core gameplay systems, multiplayer functionality, account-related services, security and moderation systems, player progression, inventories, and optional purchase-related features. The information we collect may include the following.</p>
+
+      <p><strong>2.1 Account and Platform Identifiers</strong><br>
+      When you launch or use Blood Floors, we may create or associate a game account with your platform account. We may collect:</p>
+      <ul>
+        <li>Your Meta/Oculus platform User ID;</li>
+        <li>Your Blood Floors game account identifier;</li>
+        <li>Your backend account identifier;</li>
+        <li>Device identifiers used to associate your account with your device;</li>
+        <li>Other identifiers necessary to operate and secure the Service.</li>
+      </ul>
+      <p>Blood Floors does not use traditional usernames and passwords for game authentication. Blood Floors does not intentionally collect your email address through normal gameplay. If you voluntarily contact Crimson Byte Studios for support, you may provide additional information, including an email address and the contents of your support request.</p>
+
+      <p><strong>2.2 Age Group Information</strong><br>
+      Blood Floors may process age-group or age-category information provided through or associated with the platform in order to support platform requirements, age-related functionality, safety requirements, and applicable legal obligations. Blood Floors does not intentionally collect a user's exact date of birth through normal gameplay unless specifically required by a platform or feature.</p>
+
+      <p><strong>2.3 Device and Technical Information</strong><br>
+      Blood Floors may collect information about the device and installation used to access the Service. This may include:</p>
+      <ul>
+        <li>VR headset information;</li>
+        <li>Device model;</li>
+        <li>Hardware information;</li>
+        <li>Operating system information;</li>
+        <li>Operating system/build information;</li>
+        <li>Game version;</li>
+        <li>Game build version;</li>
+        <li>Device identifiers;</li>
+        <li>Installation information;</li>
+        <li>Technical information generated while using the Service.</li>
+      </ul>
+      <p>This information may be used to operate the Service, maintain compatibility, verify game versions, improve security, detect unauthorized or modified copies, troubleshoot technical problems, and maintain the stability of the game.</p>
+
+      <p><strong>2.4 Information You Provide</strong><br>
+      Blood Floors may collect information that you voluntarily provide through the Service, including:</p>
+      <ul>
+        <li>Your in-game display name;</li>
+        <li>Room codes that you enter or create;</li>
+        <li>Player reports;</li>
+        <li>Complaints;</li>
+        <li>Report reasons;</li>
+        <li>Information submitted through moderation systems;</li>
+        <li>Other text, selections, or information that you voluntarily enter into the Service.</li>
+      </ul>
+      <p>Display names and room codes may be filtered using systems designed to prevent prohibited terms from being displayed.</p>
+
+      <p><strong>2.5 Gameplay and Progression Information</strong><br>
+      Blood Floors may collect information generated through your use of the Service. This may include:</p>
+      <ul>
+        <li>Display name;</li>
+        <li>Equipped cosmetics;</li>
+        <li>Character appearance;</li>
+        <li>Cosmetic ownership;</li>
+        <li>Virtual item inventory;</li>
+        <li>Virtual currency balance;</li>
+        <li>Gameplay progression;</li>
+        <li>Daily quest progress;</li>
+        <li>Event progress;</li>
+        <li>Collectible progress;</li>
+        <li>Candy or event-collection progress;</li>
+        <li>Leaderboard statistics;</li>
+        <li>Number of logged-in sessions;</li>
+        <li>Gameplay statistics;</li>
+        <li>Gameplay events;</li>
+        <li>Multiplayer session information;</li>
+        <li>Room information;</li>
+        <li>Technical logs;</li>
+        <li>Security-related gameplay information.</li>
+      </ul>
+      <p>This information is used to provide gameplay features, maintain progression, synchronize player information, operate events and quests, maintain inventories, and secure the Service.</p>
+
+      <p><strong>2.6 Cloud Save and Account Data</strong><br>
+      Blood Floors may store certain account-related and gameplay-related information through its backend services. This may include:</p>
+      <ul>
+        <li>Player progression;</li>
+        <li>Cosmetic ownership;</li>
+        <li>Inventory information;</li>
+        <li>Virtual currency;</li>
+        <li>Quest progress;</li>
+        <li>Event progress;</li>
+        <li>Account-related settings;</li>
+        <li>Other information required to synchronize gameplay between supported sessions or devices.</li>
+      </ul>
+
+      <p><strong>2.7 Purchase and Entitlement Information</strong><br>
+      Blood Floors may offer optional in-app purchases, cosmetic items, supporter content, virtual currency, downloadable content, or other digital content. Purchases are processed through the platform store through which the game is obtained, such as the Meta Quest platform. Blood Floors does not directly collect, store, or process payment card numbers, bank account information, or other financial account credentials. We may receive limited purchase-related information necessary to verify completed purchases, verify entitlement, restore owned content, grant currency/items, maintain inventories, prevent duplicate or fraudulent transactions, and support DLC systems. This information may include purchase identifiers, product identifiers, and entitlement status.</p>
+
+      <p><strong>2.8 Crash, Diagnostic, Performance, and Technical Information</strong><br>
+      Blood Floors may process technical, diagnostic, performance, or gameplay information generated while the game is operating, including technical logs, performance data, gameplay stats, error info, diagnostic info, crash-related data, game build info, and device data. This information is used to identify technical problems, improve performance, investigate errors, maintain stability, and improve the Service.</p>
+
+      <p><strong>2.9 Voice Chat</strong><br>
+      Blood Floors includes real-time voice chat with other players in multiplayer sessions. When voice chat is active, live microphone audio may be transmitted to other players in your session. Blood Floors does not intentionally record or store voice-chat audio as part of the Service.</p>
+
+      <p><strong>2.10 Reports and Security Information</strong><br>
+      When you submit a report or when our security or anti-cheat systems generate an alert, we may collect information relating to the event, including account identifiers, display names, session/room information, game build version, report reason, security event type, description of observed behavior, and other info necessary to investigate. Other players may submit reports concerning you, which are retained together with associated identifiers and outcomes.</p>
+
+      <p><strong>2.11 Information Stored on Your Device</strong><br>
+      Blood Floors may store certain information locally on your device using platform storage, including display name, cosmetic selections, quest/collectible progress, event progress, agreement acceptance info, gameplay settings, and access restriction/security action details. Some locally stored info may be synchronized with backend services when required.</p>
+
+      <h2>3. How We Use Information</h2>
+      <p>Blood Floors uses collected information to operate, maintain, improve, and secure the Service. Information may be used to:</p>
+      <ol>
+        <li>Create, identify, and secure game accounts;</li>
+        <li>Operate multiplayer gameplay;</li>
+        <li>Connect players to multiplayer sessions;</li>
+        <li>Synchronize gameplay information;</li>
+        <li>Save player progression and settings;</li>
+        <li>Maintain cosmetic inventories and account-linked items;</li>
+        <li>Maintain virtual currency and virtual items;</li>
+        <li>Operate quests, events, collectibles, and leaderboards;</li>
+        <li>Verify purchases and digital entitlements;</li>
+        <li>Restore or grant owned digital content;</li>
+        <li>Prevent duplicate or fraudulent transactions;</li>
+        <li>Verify game versions and installation integrity;</li>
+        <li>Detect unauthorized or modified copies of the game;</li>
+        <li>Detect and investigate cheating;</li>
+        <li>Detect fraud, exploitation, abuse, and unauthorized activity;</li>
+        <li>Process player reports and moderation requests;</li>
+        <li>Maintain moderation and security records;</li>
+        <li>Troubleshoot technical problems;</li>
+        <li>Improve performance, optimization, stability, and functionality;</li>
+        <li>Operate cloud-save and account-related features;</li>
+        <li>Support player safety and moderation systems;</li>
+        <li>Comply with Meta platform requirements and applicable laws;</li>
+        <li>Respond to lawful requests from authorities;</li>
+        <li>Protect the rights, safety, and property of Crimson Byte Studios, players, and third parties.</li>
+      </ol>
+      <p>Blood Floors does not sell user information to third parties. Blood Floors does not use collected information for unrelated advertising purposes.</p>
+
+      <h2>4. Automated Detection and Security</h2>
+      <p><strong>4.1</strong> Blood Floors uses automated systems to detect behavior that may indicate cheating, abuse, exploitation, or unauthorized activity. These systems may process information generated by your device and multiplayer session while you are playing. Examples of potentially suspicious behavior may include abnormal movement speed, teleportation, flying, excessive/invalid network events, invalid data, unauthorized modifications, or other suspicious network/gameplay activity.</p>
+      <p><strong>4.2</strong> Automated detection may generate a security alert, investigation, restriction, or enforcement action under the Blood Floors Terms of Service.</p>
+      <p><strong>4.3</strong> These systems are intended to protect the Service, players, and game infrastructure from cheating, exploitation, fraud, abuse, and unauthorized activity.</p>
+      <p><strong>4.4</strong> Where applicable law requires disclosure regarding automated decision-making, Crimson Byte Studios does not intend to use automated decision-making to produce legal or similarly significant effects about a user, except where necessary to secure the Service and enforce applicable Terms of Service.</p>
+
+      <h2>5. How We Share Your Information</h2>
+      <p><strong>5.1 No Sale of Personal Information</strong><br>
+      Blood Floors does not sell personal information. We do not share personal information with third parties for their own direct marketing purposes.</p>
+      <p><strong>5.2 Service Providers</strong><br>
+      Blood Floors may use trusted third-party service providers that process information on behalf of the Service, including:</p>
+      <ul>
+        <li><strong>Microsoft Azure PlayFab</strong> (game accounts, cloud backend, data storage, cloud scripting, virtual currency, player inventories, leaderboards, statistics, account services, security verification, and other backend infrastructure);</li>
+        <li><strong>Meta</strong> (platform sign-in, platform account identification, game entitlement verification, in-app purchase processing, and platform-related functionality);</li>
+        <li><strong>Exit Games / Photon</strong> (multiplayer networking, multiplayer sessions, real-time networking, and voice-chat functionality);</li>
+        <li><strong>Unity</strong> (game engine and runtime technologies used by Blood Floors).</li>
+      </ul>
+      <p>These providers may process information under their own terms and privacy policies.</p>
+      <p><strong>5.3 Moderation and Security Alerts</strong><br>
+      Player reports and server-side security alerts may be transmitted to services used by Crimson Byte Studios for moderation and security purposes (such as Discord). Information transmitted may include account identifiers, display names, session/room information, report reason, security event type, game build version, and description of observed behavior.</p>
+      <p><strong>5.4 Legal and Safety Disclosures</strong><br>
+      We may disclose information where reasonably necessary to comply with applicable laws, respond to lawful requests from authorities, enforce our Terms of Service, investigate fraud or abuse, protect user safety, or protect the rights/property of Crimson Byte Studios, players, or third parties.</p>
+      <p><strong>5.5 Business Transfers</strong><br>
+      If Crimson Byte Studios becomes involved in a merger, acquisition, reorganization, bankruptcy, financing transaction, or sale of assets, information associated with the Service may be transferred as part of that transaction where legally permitted. Where required by applicable law, users will be notified of material changes involving ownership or control of their information.</p>
+      <p><strong>5.6 Information Visible to Other Players</strong><br>
+      Certain information is visible to other players as part of multiplayer functionality, including your display name, equipped cosmetics, character appearance, in-session behavior, multiplayer networking data, and certain network/account identifiers where required by the Service.</p>
+
+      <h2>6. Voice Chat</h2>
+      <p><strong>6.1</strong> Blood Floors provides real-time voice chat between players in multiplayer sessions. Your live microphone audio may be transmitted to other players while you are connected to voice chat.</p>
+      <p><strong>6.2</strong> Blood Floors does not intentionally record, pre-screen, monitor, or store voice-chat audio as part of the Service.</p>
+      <p><strong>6.3</strong> Other players may hear your communications and may submit reports regarding conduct or communications that occur during gameplay. Players are responsible for their own voice communications. Voice-chat abuse may violate the Blood Floors Terms of Service and may result in enforcement action.</p>
+      <p><strong>6.4</strong> Leaving a multiplayer session or disconnecting from voice chat stops transmission of your live microphone audio through the Service.</p>
+
+      <h2>7. Cookies, Analytics, Advertising, and Diagnostics</h2>
+      <p><strong>7.1 Cookies:</strong> Blood Floors does not use browser cookies as part of the game itself.</p>
+      <p><strong>7.2 Analytics and Gameplay Statistics:</strong> Blood Floors may process gameplay statistics and technical performance information for maintaining, securing, balancing, troubleshooting, and improving the Service.</p>
+      <p><strong>7.3 Crash and Diagnostic Information:</strong> Blood Floors may process crash-related, diagnostic, and technical information when generated by the Service or its supporting infrastructure.</p>
+      <p><strong>7.4 Advertising:</strong> Blood Floors does not currently display third-party advertising or use advertising networks or advertising identifiers as part of the Service.</p>
+      <p><strong>7.5 Sale and Sharing:</strong> Blood Floors does not sell personal information or share personal information with third parties for their own direct marketing purposes.</p>
+
+      <h2>8. Data Storage and Security</h2>
+      <p><strong>8.1</strong> Information associated with Blood Floors may be stored through Microsoft Azure PlayFab and locally on your device.</p>
+      <p><strong>8.2</strong> Crimson Byte Studios uses reasonable administrative, technical, and organizational safeguards designed to protect information against unauthorized access, loss, misuse, alteration, or disclosure. These measures include backend access controls, server-side validation, purchase/entitlement verification, secure-session verification, account security controls, anti-cheat systems, and security monitoring.</p>
+      <p><strong>8.3</strong> No method of electronic transmission or storage is completely secure. Crimson Byte Studios cannot guarantee absolute security.</p>
+
+      <h2>9. Data Retention</h2>
+      <p><strong>9.1</strong> We retain information for as long as your game account exists and as long as reasonably necessary for the purposes described in this Privacy Policy.</p>
+      <p><strong>9.2</strong> Agreement acceptance records may be retained to demonstrate acceptance of a particular Terms of Service or Privacy Policy version. A reasonable history of prior acceptance records may be maintained.</p>
+      <p><strong>9.3</strong> Moderation records, reports, and security records may be retained for longer where reasonably necessary to enforce our Terms of Service, prevent repeat violations, investigate abuse/fraud, protect the Service, or respond to lawful requests.</p>
+      <p><strong>9.4</strong> Information stored locally on your device generally remains until cleared by you or removed through deletion or uninstallation of the application.</p>
+      <p><strong>9.5</strong> When information is no longer required, we may delete or de-identify it, except where retention is required or permitted by applicable law, security requirements, fraud prevention, or platform obligations.</p>
+
+      <h2>10. Your Rights and Choices</h2>
+      <p>Depending on where you live and applicable law, you may have some or all of the following rights regarding your personal information: access, correction, deletion, restriction/objection, withdrawal of consent, data portability, and lodging a complaint with a data-protection authority.</p>
+      <p><strong>10.1 Data Requests</strong><br>
+      Users may request access to, correction of, or deletion of applicable stored account-related or gameplay-related information by contacting Crimson Byte Studios at: <strong>crimsonbytestudios@gmail.com</strong><br>
+      Requests should include your Meta username or applicable account identifier, a brief description of your request, and any info reasonably necessary to verify ownership.</p>
+      <p><strong>10.2</strong> Crimson Byte Studios may need to verify your identity or ownership before fulfilling a request. We will respond within the period required by applicable law.</p>
+      <p><strong>10.3</strong> Information may not be deleted where retention is reasonably necessary for security, fraud prevention, anti-cheat enforcement, legal compliance, dispute resolution, or Terms of Service enforcement.</p>
+      <p><strong>10.4</strong> Users may change their display name where functionality is available, leave a multiplayer session to stop voice audio transmission, or uninstall the application to remove locally stored data.</p>
+
+      <h2>11. Legal Bases for Processing</h2>
+      <p>Where applicable data-protection law requires Crimson Byte Studios to identify a legal basis, we rely on:</p>
+      <ul>
+        <li><strong>Performance of a Contract:</strong> Processing necessary to provide the Service (gameplay, accounts, progression, inventories, purchases).</li>
+        <li><strong>Legitimate Interests:</strong> Processing necessary to secure the Service, prevent cheating/fraud, investigate abuse, enforce Terms, protect users, maintain infrastructure, and improve the Service.</li>
+        <li><strong>Legal Obligations:</strong> Compliance with applicable laws, regulations, and lawful requests.</li>
+        <li><strong>Consent:</strong> Where required by law.</li>
+      </ul>
+
+      <h2>12. Children's Privacy</h2>
+      <p><strong>12.1</strong> Blood Floors is intended for users 13 years of age and older. The Service is not directed toward children under 13, and Crimson Byte Studios does not knowingly collect personal information from children under 13.</p>
+      <p><strong>12.2</strong> Users must be at least 13 years old. If we learn that personal information from a child under 13 has been collected, reasonable steps will be taken to delete it.</p>
+      <p><strong>12.3</strong> Parents or guardians who believe a child under 13 has provided info may contact us via Section 16.</p>
+      <p><strong>12.4</strong> Blood Floors is a multiplayer VR experience with voice chat. Parents and guardians are encouraged to supervise minors' use of the Service.</p>
+
+      <h2>13. International Data Transfers</h2>
+      <p><strong>13.1</strong> Crimson Byte Studios is based in the United States. Information may be processed in the US and other countries where our service providers operate.</p>
+      <p><strong>13.2</strong> If you access Blood Floors from outside the US, your information may be transferred to and processed in countries with different data-protection laws.</p>
+      <p><strong>13.3</strong> Where applicable law requires safeguards, we rely on safeguards provided by our service providers or other lawful transfer mechanisms.</p>
+
+      <h2>14. Third-Party Services and Links</h2>
+      <p><strong>14.1</strong> Blood Floors relies on third-party services including Meta, Microsoft Azure PlayFab, Photon / Exit Games, Unity, Discord, and others.</p>
+      <p><strong>14.2</strong> This Privacy Policy governs Crimson Byte Studios' practices, not the independent practices of third-party providers.</p>
+      <p><strong>14.3</strong> Blood Floors may display or provide links to external destinations (store pages, community pages, support channels). Crimson Byte Studios is not responsible for third-party privacy practices.</p>
+
+      <h2>15. Changes to This Privacy Policy</h2>
+      <p><strong>15.1</strong> Crimson Byte Studios may update this Privacy Policy from time to time to reflect changes to the Service, new features, third-party services, platform requirements, data practices, laws, or security needs.</p>
+      <p><strong>15.2</strong> When material changes are made, we may present the updated policy through the game and require acceptance before continuing to use the Service.</p>
+      <p><strong>15.3</strong> The current version and effective date appear at the beginning of this policy. Records of accepted versions may be maintained.</p>
+      <p><strong>15.4</strong> Continued use after an updated policy has been presented and accepted constitutes agreement to the updated policy.</p>
+
+      <h2>16. Contact Information</h2>
+      <p>
+        For questions regarding this Privacy Policy, information collected, or data deletion requests, contact:<br>
+        <strong>Crimson Byte Studios LLC</strong><br>
+        <strong>Privacy Contact Email:</strong> crimsonbytestudios@gmail.com<br>
+        <strong>Official Website:</strong> <a href="https://bluecatplayz.github.io/blood-floors-site/" target="_blank" rel="noopener">https://bluecatplayz.github.io/blood-floors-site/</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="CrimSonByteStudiosMonkeyLogo.png" alt="Blood Floors Logo" onerror="this.style.display='none'">
+          <span>BLOOD FLOORS</span>
+        </a>
+        <div class="footer-copy">© <span id="year"></span> Crimson Byte Studios LLC. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('tech-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const chars = '$*#@!&<>~+=^§';
+    const colors = ['#f02b3d', '#2bf065', '#ffffff', '#2b8df0']; 
+    const particles = [];
+    const count = Math.floor((width * height) / 80000);
+
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        char: chars[Math.floor(Math.random() * chars.length)],
+        color: colors[Math.floor(Math.random() * colors.length)],
+        size: Math.floor(Math.random() * 40) + 60,
+        speedY: (Math.random() - 0.5) * 0.2,
+        speedX: (Math.random() - 0.5) * 0.2,
+        alpha: Math.random() * 0.35 + 0.15
+      });
+    }
+
+    function animateTech() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.imageSmoothingEnabled = false;
+      particles.forEach(p => {
+        p.y += p.speedY;
+        p.x += p.speedX;
+        if (p.y < -100) p.y = height + 100;
+        if (p.y > height + 100) p.y = -100;
+        if (p.x < -100) p.x = width + 100;
+        if (p.x > width + 100) p.x = -100;
+
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.font = `bold ${p.size}px monospace`;
+        ctx.fillText(p.char, p.x, p.y);
+      });
+      requestAnimationFrame(animateTech);
+    }
+    animateTech();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

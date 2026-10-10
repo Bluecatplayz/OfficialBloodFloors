@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>BLOOD FLOORS — Terms of Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090909;
+      --panel: #111111;
+      --text: #f5f2f0;
+      --muted: #a9a2a0;
+      --red: #c51d2b;
+      --red-bright: #f02b3d;
+      --line: rgba(255,255,255,.10);
+      --max: 900px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: Inter, system-ui, sans-serif; line-height: 1.65;
+      overflow-x: hidden; position: relative;
+    }
+    #tech-canvas {
+      position: fixed; inset: 0; pointer-events: none; z-index: -1; opacity: 0.35;
+      image-rendering: pixelated;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -2;
+      background: radial-gradient(ellipse at 50% 0%, rgba(139, 10, 23, .15), transparent 55%),
+                  linear-gradient(180deg, #0b0a0a 0%, #090909 55%, #0d090a 100%);
+    }
+    a { color: inherit; text-decoration: none; cursor: pointer; }
+    .wrap { width: min(1160px, calc(100% - 44px)); margin-inline: auto; }
+    .content-wrap { position: relative; z-index: 10; width: min(var(--max), calc(100% - 44px)); margin-inline: auto; padding: 80px 0 120px; }
+    .topbar {
+      position: sticky; top: 0; z-index: 100; background: rgba(9,9,9,.88);
+      backdrop-filter: blur(16px); border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: .11em; font-size: .88rem; z-index: 101; }
+    .brand-logo {
+      width: 40px; height: 40px; object-fit: cover; border-radius: 6px;
+      border: 1px solid var(--red); box-shadow: 0 0 12px rgba(197,29,43,0.5);
+      background-color: #111; display: block;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 10px 16px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.24);
+      color: white; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem;
+      font-weight: 800; transition: background .2s, border-color .2s; cursor: pointer; z-index: 101;
+    }
+    .btn:hover { background: rgba(255,255,255,.1); border-color: white; }
+    
+    .eyebrow {
+      color: #ff5b67; text-transform: uppercase; letter-spacing: .24em;
+      font-size: .72rem; font-weight: 800; margin-bottom: 12px;
+    }
+    h1 {
+      font-family: "Barlow Condensed", sans-serif; font-size: clamp(3rem, 7vw, 5rem);
+      text-transform: uppercase; font-weight: 900; margin: 0 0 10px; line-height: .95;
+    }
+    .effective-date { color: var(--muted); font-size: .85rem; margin-bottom: 45px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+    
+    h2 {
+      font-family: "Barlow Condensed", sans-serif; font-size: 1.8rem;
+      text-transform: uppercase; font-weight: 800; margin-top: 40px; margin-bottom: 15px; color: #fff;
+    }
+    p, li { color: var(--muted); font-size: .95rem; margin-bottom: 16px; }
+    ul { padding-left: 20px; margin-bottom: 20px; }
+    li { margin-bottom: 8px; }
+
+    footer { position: relative; z-index: 100; padding: 35px 0; border-top: 1px solid var(--line); background: #090909; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .footer-copy { color: #817977; font-size: .75rem; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <canvas id="tech-canvas" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="CrimSonByteStudiosMonkeyLogo.png" alt="Blood Floors Logo" onerror="this.style.display='none'">
+        <span>CRIMSON BYTE / BLOOD FLOORS</span>
+      </a>
+      <a class="btn" href="index.html">← GO BACK TO HOME</a>
+    </div>
+  </header>
+
+  <main class="content-wrap">
+    <div class="eyebrow">LEGAL AGREEMENT</div>
+    <h1>Terms of Service</h1>
+    <div class="effective-date">Version: 1.0 | Effective Date: October 2, 2026 | Crimson Byte Studios LLC</div>
+
+    <div class="terms-body">
+      <h2>1. Acceptance of These Terms</h2>
+      <p>1.1 These Terms of Service ("Terms") form a binding agreement between you and Crimson Byte Studios LLC ("Crimson Byte," "we," "us," or "our") governing your access to and use of the video game Blood Floors and any related online services, features, content, and software we provide (collectively, the "Service").</p>
+      <p>1.2 By downloading, installing, launching, accessing, or playing Blood Floors, or by selecting "ACCEPT" in the in-game agreement screen, you acknowledge that you have read, understood, and agree to be bound by these Terms and by our Privacy Policy, which is incorporated into these Terms by reference.</p>
+      <p>1.3 If you do not agree to these Terms, do not select ACCEPT and do not use the Service. If you select DENY, the game will close. You may only use the Service if you agree to these Terms.</p>
+      <p>1.4 If you do not have legal capacity to enter into a binding agreement where you live (for example, if you are under the age of majority), you may use the Service only with the consent of a parent or legal guardian, and that guardian agrees to these Terms on your behalf.</p>
+      <p>1.5 If you use the Service on behalf of an organization, you represent that you have authority to bind that organization to these Terms, and "you" includes that organization.</p>
+
+      <h2>2. Eligibility and Age Requirements</h2>
+      <p>2.1 You must be at least 13 years of age to access or use the Service.</p>
+      <p>2.2 If you are between 13 and the age of majority in your jurisdiction, you represent that your parent or legal guardian has reviewed and agreed to these Terms.</p>
+      <p>2.3 The Service is not directed to children under 13, and we do not knowingly collect personal information from children under 13. If we learn that we have collected personal information from a child under 13, we will take steps to delete that information.</p>
+      <p>2.4 Blood Floors is also subject to the age rating and access rules of the platform store through which you obtained it (for example, the Meta Quest store). You must separately satisfy the platform's own age and account requirements. Where a platform requires a higher minimum age than Section 2.1, the platform requirement applies to your use of the Service through that platform.</p>
+      <p>2.5 Some features of the Service, including multiplayer interaction and voice communication, involve exposure to content created by other players. See Sections 11, 13, and 14.</p>
+
+      <h2>3. The Service</h2>
+      <p>3.1 Blood Floors is a virtual reality (VR) multiplayer horror game designed for standalone VR headsets. Gameplay uses motion-tracked hand movement for locomotion and includes exploration, cooperative and competitive interaction with other players, non-player monster encounters, jumpscare and elimination sequences, timed map events, and respawning.</p>
+      <p>3.2 The Service includes:</p>
+      <ul>
+        <li>(a) <strong>Multiplayer networking.</strong> Blood Floors is an online, multiplayer-only experience. You will be matched into or create sessions with other players, including both public sessions and private sessions entered using a room code entered on an in-game computer.</li>
+        <li>(b) <strong>Voice communication.</strong> The Service includes real-time voice chat with other players in your session. Voice chat is transmitted to other players in your session while you are connected. There is no text chat.</li>
+        <li>(c) <strong>Display names.</strong> You choose a display name that is shown to other players.</li>
+        <li>(d) <strong>Virtual currency and cosmetics.</strong> The Service includes a virtual currency ("Bits") and cosmetic items (such as hats, face items, body items, and hand-held items) that can be earned or purchased and applied to your in-game character.</li>
+        <li>(e) <strong>Leaderboards and stats.</strong> The Service displays leaderboard statistics, including a record of logged-in sessions.</li>
+        <li>(f) <strong>Daily quests and rewards.</strong> The Service includes daily quests and other reward mechanics that reset on a recurring basis.</li>
+        <li>(g) <strong>Limited-time events.</strong> The Service includes seasonal and limited-time events with event-specific collectibles and rewards.</li>
+        <li>(h) <strong>In-app purchases.</strong> The Service offers optional purchases for real money through the platform store through which you obtained the game.</li>
+        <li>(i) <strong>Reporting and moderation tools.</strong> The Service includes tools that allow players to report, mute, or remove other players from a session, together with automated anti-cheat detection.</li>
+      </ul>
+      <p>3.3 The Service is provided only through the platform stores and devices we officially support. We are not obligated to provide the Service through any other channel.</p>
+      <p>3.4 Blood Floors is a VR-only experience. There is no supported non-VR or flat-screen mode.</p>
+
+      <h2>4. Accounts and Registration</h2>
+      <p>4.1 No separate username or password. Blood Floors does not use a traditional username-and-password account. When you launch the game, we create or link a game account using the identity provided by your platform account (your Meta/Oculus platform identity) and, where applicable, a device identifier. You do not choose or manage a password for the Service.</p>
+      <p>4.2 Account creation is automatic. A game account is created automatically the first time you launch the Service. Your game account is linked to your platform identity, and a platform identity that is different from the one previously associated with your game account may be refused.</p>
+      <p>4.3 Platform account requirements. You must maintain a platform account in good standing with the applicable platform provider (for example, Meta) and must satisfy that provider's own terms. Your ability to use the Service depends on your continued access to that platform account, platform entitlement to the game, and an internet connection.</p>
+      <p>4.4 You are responsible for all activity conducted through your platform account and your device in connection with the Service. You are responsible for keeping your platform account and device secure.</p>
+      <p>4.5 Restrictions on accounts. You may not:</p>
+      <ul>
+        <li>(a) sell, trade, transfer, rent, lend, share, or otherwise make your account or access available to any other person;</li>
+        <li>(b) create an account using a platform identity that is not yours, or use another person's account;</li>
+        <li>(c) use the Service if you have previously been suspended, banned, or otherwise removed from the Service, or if you are barred from receiving the Service under applicable law;</li>
+        <li>(d) misrepresent your identity, age, or affiliation;</li>
+        <li>(e) use the Service in violation of any platform terms applicable to you.</li>
+      </ul>
+      <p>4.6 No account recovery. Because accounts are bound to your platform identity and are not secured by a password we control, we may be unable to restore access to an account associated with a lost, banned, or replaced platform account or device. We are not responsible for any loss resulting from your inability to access an account.</p>
+      <p>4.7 No account deletion feature is currently offered in the Service. Requests regarding your account or data may be submitted as described in Section 19 and in our Privacy Policy; whether and how such requests can be fulfilled depends on applicable law and platform requirements.</p>
+
+      <h2>5. License Grant</h2>
+      <p>5.1 Subject to your compliance with these Terms, we grant you a personal, limited, revocable, non-exclusive, non-transferable, non-sublicensable license to install and use the Blood Floors software and to access and play the Service, in each case solely for your own personal, non-commercial entertainment purposes, on devices and through platform accounts that you own or control and that are authorized for use with the Service.</p>
+      <p>5.2 This license is licensed to you, not sold. All rights not expressly granted to you in these Terms are reserved by Crimson Byte and its licensors.</p>
+      <p>5.3 The license automatically terminates without notice if you breach these Terms. We may, in our discretion, suspend or terminate the license in accordance with Sections 15, 21, and 22.</p>
+
+      <h2>6. Restrictions</h2>
+      <p>6.1 Except as expressly permitted by applicable law or with our prior written permission, you will not, and will not permit, encourage, or enable any other person to:</p>
+      <ul>
+        <li>(a) copy, reproduce, distribute, publicly display, or publicly perform the Service or any part of it;</li>
+        <li>(b) sell, resell, rent, lease, loan, sublicense, publish, or otherwise commercialize the Service or any access to it;</li>
+        <li>(c) modify, adapt, translate, or create derivative works of the Service;</li>
+        <li>(d) reverse engineer, decompile, disassemble, or attempt to derive the source code, underlying ideas, algorithms, or structure of the Service, except to the extent such restriction is prohibited by applicable law;</li>
+        <li>(e) remove, alter, or obscure any copyright, trademark, or other proprietary rights notice on or in the Service;</li>
+        <li>(f) circumvent, disable, interfere with, or attempt to circumvent any security feature, technological measure, access control, authentication requirement, entitlement check, anti-cheat system, or copy protection of the Service;</li>
+        <li>(g) extract, rip, scrape, or export game assets, models, textures, audio, code, or other content from the Service, except as permitted by applicable law;</li>
+        <li>(h) use cheats, exploits, automation, bots, scripts, macro software, or any unauthorized third-party software that interacts with or provides an advantage in the Service;</li>
+        <li>(i) manipulate, intercept, spoof, or alter network traffic, game data, client state, or server requests, including by modifying the game client to gain an unauthorized advantage;</li>
+        <li>(j) access or attempt to access any backend system, account, data, or API of the Service other than through the interfaces we provide;</li>
+        <li>(k) probe, scan, or test the vulnerability of any system or network, or breach or circumvent any security or authentication measure;</li>
+        <li>(l) interfere with, disrupt, overload, or degrade the performance of the Service, including by conducting denial-of-service attacks, packet flooding, or excessive automated requests;</li>
+        <li>(m) develop, distribute, or operate unauthorized servers, emulators, private servers, or clients for the Service;</li>
+        <li>(n) use the Service for any unlawful, fraudulent, or malicious purpose;</li>
+        <li>(o) misrepresent the origin of any content or communication originating from the Service;</li>
+        <li>(p) scrape, harvest, or collect data from the Service by automated means without our prior written consent.</li>
+      </ul>
+      <p>6.2 Nothing in this Section limits your rights under applicable law that cannot be waived, including any rights you may have to decompile interoperable software where required by law.</p>
+
+      <h2>7. Intellectual Property</h2>
+      <p>7.1 The Service, including the Blood Floors name, logos, branding, game code, game systems, game mechanics, character designs, monster designs, maps, environments, models, textures, artwork, animations, audio, sound effects, music, dialogue, user interface, documentation, and all other original content and materials made available by us in connection with the Service, is owned by Crimson Byte Studios LLC or its licensors and is protected by copyright, trademark, trade dress, trade secret, and other intellectual property laws.</p>
+      <p>7.2 Crimson Byte Studios LLC, the Blood Floors name and logo, and related marks are trademarks or trade dress of Crimson Byte Studios LLC. You may not use any of our marks without our prior written permission.</p>
+      <p>7.3 The Service may also include content owned by third parties. We do not claim ownership of third-party content that we do not own. Third-party content is provided subject to the license terms of the applicable third-party owner, and those owners retain all rights in their content.</p>
+      <p>7.4 Your own content. To the extent you submit, transmit, or display any content through the Service (including your display name, any name or identifying text you enter, and any content you communicate to other players), you grant us a worldwide, non-exclusive, royalty-free, sublicensable and transferable license to host, store, reproduce, modify, adapt, publish, and display that content solely as required to operate, secure, moderate, and improve the Service and to enforce these Terms. You represent that you have all rights necessary to grant this license.</p>
+      <p>7.5 Feedback. If you provide suggestions, ideas, or feedback about the Service, we may use them without restriction or obligation to you.</p>
+
+      <h2>8. Third-Party Intellectual Property and Fan-Game Disclaimer</h2>
+      <p>8.1 Blood Floors is an independent game inspired by the broader genre of arm-swing locomotion VR games. Crimson Byte Studios LLC is not affiliated with, sponsored by, endorsed by, or licensed by any third-party developer or rights holder of any such game, unless we state otherwise in writing.</p>
+      <p>8.2 Names, trademarks, logos, and other intellectual property of third parties that appear in or in connection with the Service (including the name of any other game, studio, or platform) remain the property of their respective owners. Their appearance in the Service does not imply affiliation, sponsorship, or endorsement.</p>
+      <p>8.3 The Service may include references, assets, or elements obtained under third-party licenses, including assets from the Unity Asset Store, Creative Commons or similar licenses, and other licensed content. Such content remains subject to its original license terms, and those terms prevail over these Terms with respect to that content. Where a third-party license requires attribution, any required attribution is maintained in the project's notices and documentation.</p>
+      <p>8.4 These Terms do not grant you any right or license to use any third-party intellectual property.</p>
+      <p>8.5 We do not make any representation or warranty as to the legality of any fan-game, homage, or inspired work, and nothing in these Terms should be read as a legal conclusion regarding any such matter.</p>
+
+      <h2>9. Virtual Currency and Virtual Items</h2>
+      <p>9.1 Virtual currency. The Service includes a virtual currency called "Bits" (internal code "BT"). Bits have no real-world monetary value, are not legal tender, and are not a deposit, transfer, or store of value.</p>
+      <p>9.2 How Bits are obtained. Bits may be earned by participating in Service features (for example, daily login rewards and daily quests), may be granted as part of promotions or events, or may be granted when you make an in-app purchase. Bits can only be obtained through the methods we make available in the Service.</p>
+      <p>9.3 How Bits are spent. Bits may be spent within the Service on virtual items we make available for purchase, such as cosmetics. All prices displayed in the Service are denominated in Bits and are set by us and may change at any time.</p>
+      <p>9.4 Virtual items. Cosmetic and other virtual items made available in the Service (including hats, face items, body items, hand-held items, badges, titles, and similar content) are licensed to you, not sold. You acquire no ownership interest in, and no right to transfer or convert, any virtual item.</p>
+      <p>9.5 Nature of virtual items. Virtual items:</p>
+      <ul>
+        <li>(a) are a personal, limited, non-exclusive, non-transferable, revocable license for use only within the Service;</li>
+        <li>(b) have no cash value, no real-world monetary value, and cannot be exchanged for money or any real-world thing of value, except where applicable law expressly requires otherwise;</li>
+        <li>(c) may not be sold, traded, transferred, gifted, or otherwise moved outside the authorized systems of the Service, and any purported transfer outside the Service is void and may result in suspension or termination;</li>
+        <li>(d) may be modified, balanced, re-priced, replaced, removed, suspended, or discontinued by us, including for balance, security, legal, or operational reasons, where permitted by applicable law;</li>
+        <li>(e) are tied to the continued operation of the Service and may be lost or unusable if the Service is suspended, discontinued, or your account is suspended or terminated in accordance with these Terms;</li>
+        <li>(f) may only be held, displayed, or used by the account that earned or purchased them.</li>
+      </ul>
+      <p>9.6 Staff, moderator, and special items. Certain items (including staff, moderator, creator, and owner-designated badges, titles, hammers, and similar items) are reserved for accounts designated by us, are not available for purchase or earn by ordinary players, and may be removed at any time from any account that is not authorized to hold them.</p>
+      <p>9.7 Refunds of virtual items or Bits. Except where applicable law grants you a refund right that cannot be waived, purchases and grants of virtual items and Bits are final and non-refundable once delivered. Nothing in these Terms limits any refund right you have under applicable law or under the refund policy of the platform store through which you purchased the game or any in-app purchase.</p>
+      <p>9.8 Leaderboards and statistics. Leaderboard entries, rankings, statistics, and similar records displayed in the Service are not virtual items, are not transferable, and may be modified, reset, removed, or discontinued by us at any time.</p>
+
+      <h2>10. In-App Purchases</h2>
+      <p>10.1 The Service offers optional in-app purchases (for example, supporter bundles) that grant Bits and/or virtual items for real money. All in-app purchases are processed by the platform store through which you obtained the game (for example, the Meta Quest store). We do not collect, store, or process your payment card or banking information.</p>
+      <p>10.2 By making an in-app purchase, you authorize the applicable platform to charge the payment method associated with your platform account at the price displayed at the time of purchase, together with any applicable taxes.</p>
+      <p>10.3 Platform terms control. All purchases are additionally subject to the terms, policies, and refund rules of the applicable platform store. Where the platform's terms conflict with these Terms, the platform's terms govern the purchase transaction itself.</p>
+      <p>10.4 Prices and availability. Prices, contents, and availability of any in-app purchase may change at any time. We are not obligated to offer any particular purchase, price, or bundle.</p>
+      <p>10.5 Validation. Purchases must be completed through the platform's checkout flow and are validated by us (directly or through the platform) before the corresponding Bits or virtual items are granted. We may refuse to grant, revoke, or reverse any Bits or virtual items obtained through a purchase that is not validated, that is later reversed, refunded, charged back, or found to be fraudulent.</p>
+      <p>10.6 Duplicate and restored purchases. Where supported, previously completed purchases associated with your platform account may be restored and re-validated. A purchase that has already been redeemed will not grant benefits a second time.</p>
+      <p>10.7 Fraud and abuse. Obtaining, or attempting to obtain, in-app purchases, Bits, or virtual items through fraud, chargebacks, abuse of refund mechanisms, unauthorized payment methods, or manipulation of the validation process is a material violation of these Terms and may result in suspension or termination of your account and revocation of items.</p>
+      <p>10.8 We do not sell, offer, or administer any subscription or virtual currency sale beyond what is expressly displayed in the Service.</p>
+
+      <h2>11. Player Conduct</h2>
+      <p>11.1 You agree to comply with these Terms, our Privacy Policy, applicable law, and the rules of any platform through which you access the Service.</p>
+      <p>11.2 You may not, whether in the Service, in voice communication, in display names, in room codes, or in connection with the Service generally:</p>
+      <ul>
+        <li>(a) harass, bully, threaten, stalk, intimidate, or cause substantial emotional distress to any person;</li>
+        <li>(b) engage in hate speech, discrimination, or abuse based on race, ethnicity, national origin, religion, gender, gender identity, sexual orientation, disability, age, or any other protected characteristic;</li>
+        <li>(c) engage in sexually explicit, obscene, or pornographic conduct or communication;</li>
+        <li>(d) impersonate any person or entity, or falsely state or imply an affiliation with any person or entity;</li>
+        <li>(e) share, publish, or use another person's private or personally identifying information (doxxing), including without their consent;</li>
+        <li>(f) promote, threaten, or glorify self-harm, suicide, or violence against any person or group;</li>
+        <li>(g) deceive, defraud, scam, or mislead other players, including regarding trades, giveaways, or virtual items;</li>
+        <li>(h) cheat, exploit bugs, hack, or use any unauthorized software or device that gives an unfair advantage;</li>
+        <li>(i) exploit, abuse, or publicize bugs, glitches, or vulnerabilities for personal or group advantage rather than reporting them;</li>
+        <li>(j) manipulate game data, client state, network traffic, server requests, or backend systems;</li>
+        <li>(k) interfere with, disrupt, or degrade the Service or any other player's enjoyment of the Service;</li>
+        <li>(l) conduct or attempt to gain unauthorized access to any backend, account, or data, including the Service's cloud backend, configuration, or APIs;</li>
+        <li>(m) exploit or misuse the Service's cloud scripting, item-granting, currency, inventory, or reporting functions;</li>
+        <li>(n) engage in unauthorized automation, bots, macroing, AFK-farming, or scraping;</li>
+        <li>(o) violate any applicable law, regulation, or third-party right;</li>
+        <li>(p) use the Service to advertise, solicit, or spam other players;</li>
+        <li>(q) assist or enable any other person to do any of the above.</li>
+      </ul>
+      <p>11.3 Content standards for names and items. Your display name, any text you enter, and any virtual items you equip must not be hateful, sexually explicit, violent, misleading, impersonating, or otherwise inconsistent with these Terms or platform rules. We may reject, change, or remove any name or item that violates these standards.</p>
+      <p>11.4 Voice chat. Voice chat is available to all players in a session and is not pre-screened. You are responsible for your own voice communications. Abuse of voice chat is a violation of this Section.</p>
+
+      <h2>12. Cheating, Exploits, and Security</h2>
+      <p>12.1 Fair play. Blood Floors is a competitive, shared multiplayer experience. Cheating harms other players and is strictly prohibited.</p>
+      <p>12.2 You may not, in connection with the Service:</p>
+      <ul>
+        <li>(a) use cheats, trainers, hacks, aimbots, wallhacks, speed modifications, teleportation tools, flight, noclip, or any unauthorized modification of the game client;</li>
+        <li>(b) modify or tamper with game memory, processes, files, or configuration to gain an advantage;</li>
+        <li>(c) manipulate, intercept, replay, or forge network traffic or server requests;</li>
+        <li>(d) circumvent or disable any anti-cheat, security, entitlement, authentication, or verification system;</li>
+        <li>(e) exploit bugs, glitches, or unintended behavior to gain an advantage, disrupt other players, or obtain items, currency, progression, or access you are not entitled to;</li>
+        <li>(f) manipulate, generate, duplicate, or falsify virtual currency, inventory, items, cosmetics, statistics, rewards, purchases, or entitlements;</li>
+        <li>(g) bypass progression, reward, or claim requirements, including by manipulating reward claims, daily rewards, event collection, or purchase validation;</li>
+        <li>(h) use unauthorized third-party software, injected code, modified clients, or tools that interact with the Service;</li>
+        <li>(i) access or use any account other than your own, or attempt to obtain another player's account or identifying information;</li>
+        <li>(j) share, distribute, or facilitate the distribution of cheats, exploits, or unauthorized modification tools.</li>
+      </ul>
+      <p>12.3 Report vulnerabilities. If you discover a security vulnerability, bug, or exploit in the Service, you must report it to us through our official support channel crimsonbytestudios@gmail.com and must not exploit, publicize, or distribute it. We may, in our discretion, recognize good-faith reports.</p>
+      <p>12.4 Automated detection. The Service uses automated and manual systems to detect suspected cheating and abuse, including detection of abnormal movement speed, teleportation, flying, excessive or invalid network events, invalid RPC calls, invalid properties, invalid cosmetics, and other suspicious network behavior. Detection of an anomaly may result in an enforcement action under Section 15 even where no intent is established. You consent to the operation of these systems as a condition of using the Service.</p>
+
+      <h2>13. Multiplayer, Sessions, and Communication</h2>
+      <p>13.1 Sessions are shared. Blood Floors places you in sessions with other players. Public sessions may be joined by other players we match you with. Private sessions are entered using a room code that you or another player enters on an in-game computer; room codes are shareable and any player who has a code may join that session while it is open.</p>
+      <p>13.2 Other players can see information about you. In a session, other players may see your display name, your equipped cosmetics, your in-session behavior, and identifiers used by the networking system to identify your session participant (including a network user identifier and, in some configurations, your game account identifier). Do not share personal information you do not want others to see.</p>
+      <p>13.3 Player actions can affect other players. Within the Service, game events may cause your character to be eliminated, jumpscared, teleported, frozen, respawned, or removed from a session, and your actions may affect other players' sessions. These are gameplay outcomes and are not grounds for a claim against us, except as prohibited by law.</p>
+      <p>13.4 Voice chat. Voice chat transmits your live microphone audio to other players in your session while you are connected. We do not pre-screen voice chat and do not record or store voice chat as part of the Service. You may be removed from a session or the Service for abuse of voice chat.</p>
+      <p>13.5 No text chat. The Service does not provide text chat between players.</p>
+      <p>13.6 In-session tools. The Service provides in-session tools that allow players to mute, report, and remove other players from the session. Use of these tools is subject to these Terms; abuse of these tools (including false reports or mass removal of players) is a violation.</p>
+
+      <h2>14. Names, Cosmetics, and User Content Standards</h2>
+      <p>14.1 Display names and any other text you provide must comply with Section 11.3. Names may be length-limited and restricted to certain characters, and may be filtered before display.</p>
+      <p>14.2 We may change, refuse, or remove any display name at any time, including where a name is unavailable, reserved, already in use, or violates these Terms. If your name is changed or removed, you may be required to choose a new name.</p>
+      <p>14.3 Equipped cosmetics and other visible content must comply with Section 11.3. We may unequip, hide, or remove any item from any session or account.</p>
+      <p>14.4 The Service does not currently provide a mechanism for you to create, upload, or distribute custom game content (such as custom maps, models, or images) to other players. Any feature that later permits this will be subject to additional rules communicated at the time the feature is introduced.</p>
+
+      <h2>15. Moderation, Reporting, and Enforcement</h2>
+      <p>15.1 Our rights. We may, but are not obligated to, monitor, review, or act on conduct, content, or activity in connection with the Service. We may take action based on player reports, automated detection, our own review, or information from a platform provider or law enforcement.</p>
+      <p>15.2 Enforcement actions. Depending on the severity, history, and circumstances of a violation, we may take any one or more of the following actions, in any order, with or without notice to you:</p>
+      <ul>
+        <li>(a) issuing a warning;</li>
+        <li>(b) muting, removing, or restricting your access to voice chat or other features;</li>
+        <li>(c) removing or unequipping items, names, or content;</li>
+        <li>(d) removing you from a multiplayer session;</li>
+        <li>(e) resetting, removing, or adjusting stats, leaderboard entries, rewards, or virtual items;</li>
+        <li>(f) limiting, restricting, or suspending your account or access to the Service for a definite or indefinite period;</li>
+        <li>(g) permanently banning your account and/or device;</li>
+        <li>(h) refusing, reversing, or reversing the benefits of a fraudulent purchase or reward;</li>
+        <li>(i) reporting you to a platform provider, third-party service provider, or law enforcement;</li>
+        <li>(j) taking any other action we reasonably consider necessary to protect the Service, other players, or third parties.</li>
+      </ul>
+      <p>15.3 No obligation to act or to apply uniform penalties. We are not obligated to take action in every instance, to notify you before acting, or to apply the same action to every violation. We may apply different actions to different players based on our discretion, context, and applicable law.</p>
+      <p>15.4 Automatic and technical blocks. Access to the Service may also be blocked automatically for technical, security, or operational reasons, including an account ban, a device or hardware block, a version mismatch, a failed platform entitlement check, or a failed security verification. When blocked, you may be shown a generic access-denied screen with an error code rather than a specific reason.</p>
+      <p>15.5 No guaranteed appeals process. You may contact us using the details in Section 28 to ask about an enforcement action. We are not obligated to provide an appeal, to disclose detection methods or evidence, or to reverse an action.</p>
+      <p>15.6 Platform reports. We may also act on reports or actions taken by the platform through which you obtained the Service, and platform actions may independently affect your access.</p>
+
+      <h2>16. Anti-Cheat and Security Verification</h2>
+      <p>16.1 The Service requires successful security verification before you can play, which may include verification of your platform identity, platform entitlement to the game, the version of your game build, your device, and your game account.</p>
+      <p>16.2 We may refuse or terminate access if verification fails, if the game build is outdated or obtained from an unauthorized source, if the platform identity or entitlement cannot be confirmed, or if your device or account appears on a block list.</p>
+      <p>16.3 Security verification may involve the collection and processing of device and account information as described in our Privacy Policy.</p>
+
+      <h2>17. Service Availability and Updates</h2>
+      <p>17.1 No guarantee of availability. The Service is provided on an "as available" basis. The Service may be unavailable or degraded from time to time due to maintenance, updates, outages, failures of our or a third party's systems, internet or platform issues, or other causes beyond our reasonable control.</p>
+      <p>17.2 Changes to the Service. We may, at any time and without liability to you, add, modify, suspend, remove, or disable any feature, content, item, reward, mechanic, map, event, cosmetic, leaderboard, matchmaking behavior, or other aspect of the Service, in whole or in part, including where we believe it is necessary for balance, security, legal, or operational reasons.</p>
+      <p>17.3 Updates are required. We may release updates, patches, security fixes, content updates, backend changes, or platform-required updates. You may be required to install an update to continue using the Service, and we may suspend or refuse access to versions of the Service that have not been updated. Updates may change gameplay, remove or alter content, and modify system requirements.</p>
+      <p>17.4 System requirements. You are responsible for ensuring that your device, platform account, and internet connection meet the requirements for the Service, which may change over time.</p>
+      <p>17.5 Discontinuation. We may suspend, discontinue, or terminate the Service, or any portion of it, at any time.</p>
+
+      <h2>18. Third-Party Services</h2>
+      <p>18.1 The Service relies on third-party services and software, which currently include the platform and device services of Meta (including platform sign-in, entitlement verification, and in-app purchase processing), Microsoft Azure PlayFab (game backend, accounts, data storage, cloud scripting, leaderboards, and economy), Exit Games Photon (multiplayer networking and voice communication), Discord (moderation and security alerting), and the Unity engine and related third-party components.</p>
+      <p>18.2 Those third parties have their own terms of service, privacy policies, and practices. We do not control them and are not responsible for them. Your use of those services is subject to their terms and policies. Where a third party's terms govern your relationship with that third party, those terms apply to that relationship.</p>
+      <p>18.3 Outages of third-party services may make the Service unavailable or cause loss of access to features, items, or data. We are not liable for the acts, omissions, or failures of any third-party service providers, including any third-party service used to deliver the Service.</p>
+      <p>18.4 The Service does not display third-party advertising.</p>
+
+      <h2>19. Privacy Policy</h2>
+      <p>19.1 Our Privacy Policy explains what information we collect, how we use it, how it is stored and shared, and the choices available to you. The Privacy Policy is a separate document and is incorporated into these Terms by reference. The Privacy Policy governs data practices; these Terms govern your use of the Service. Where these Terms and the Privacy Policy address the same subject, the Privacy Policy controls with respect to data practices.</p>
+      <p>19.2 You must accept both these Terms and the Privacy Policy before you can play.</p>
+      <p>19.3 We do not sell your personal information.</p>
+
+      <h2>20. Electronic Acceptance and Records</h2>
+      <p>20.1 Electronic agreement. These Terms and the Privacy Policy are presented to you electronically in the game. Your selection of the "ACCEPT" control constitutes your electronic signature and your express agreement to be bound by the document you accepted.</p>
+      <p>20.2 How acceptance is recorded. When you accept, we record, in connection with your game account: the type of document accepted (Terms of Service or Privacy Policy), the version of that document, the UTC timestamp of acceptance, and the version of the game build in which acceptance occurred. A history of your prior acceptances is retained on a rolling basis, limited to a reasonable number of prior entries. Your acceptance is recorded privately against your game account and is not publicly displayed.</p>
+      <p>20.3 We do not require you to accept a document you have already accepted at the same version. You will be asked to review and accept a document again only when its version changes.</p>
+      <p>20.4 Recorded information is used to demonstrate your agreement, to determine whether an updated version requires your acceptance, and to operate and secure the Service.</p>
+      <p>20.5 Evidence of agreement. You agree that our electronic records of your acceptance (including version, timestamp, and build) are admissible and constitute evidence of your agreement to the applicable version of these Terms.</p>
+      <p>20.6 Denial. If you do not accept, the Service will not be made available to you and the game will close.</p>
+
+      <h2>21. Changes to These Terms</h2>
+      <p>21.1 We may update these Terms from time to time. When we make a material change, we will present the updated Terms to you in the game and require your acceptance before you continue to use the Service.</p>
+      <p>21.2 The current version of these Terms and its effective date appear at the top of this document. The version of these Terms you accepted is recorded in accordance with Section 20.</p>
+      <p>21.3 Your continued use of the Service after you accept an updated version of these Terms constitutes your agreement to the updated Terms. If you do not accept an updated version, you must not use the Service, and your license under Section 5 terminates.</p>
+      <p>21.4 We are not obligated to notify you of changes that are not material, or to give advance notice where a change is required for legal, security, or operational reasons.</p>
+      <p>21.5 The version of these Terms in effect at the time of any dispute will govern that dispute to the extent required by applicable law.</p>
+
+      <h2>22. Termination and Suspension</h2>
+      <p>22.1 By you. You may stop using the Service at any time by closing the game. Closing the game does not delete your account or your data.</p>
+      <p>22.2 By us. We may suspend or terminate your access to the Service, in whole or in part, at any time, with or without cause and with or without notice, including where:</p>
+      <ul>
+        <li>(a) you breach or we reasonably believe you have breached these Terms;</li>
+        <li>(b) you engage in cheating, fraud, exploitation, harassment, abuse, or other conduct harmful to other players or the Service;</li>
+        <li>(c) you attempt to circumvent or interfere with security, anti-cheat, verification, or enforcement systems;</li>
+        <li>(d) your account, platform account, device, or entitlement is suspended, revoked, or terminated by a platform provider;</li>
+        <li>(e) required by applicable law, legal process, or a request from a platform provider or authority;</li>
+        <li>(f) we discontinue the Service or a portion of it;</li>
+        <li>(g) we reasonably believe continued access creates a security, legal, or operational risk.</li>
+      </ul>
+      <p>22.3 Effect of termination. Upon suspension or termination, your license under Section 5 ends and you must stop using the Service. We may take any of the actions described in Section 15.2.</p>
+      <p>22.4 No obligation to preserve. We are not obligated to retain your account, data, virtual currency, virtual items, statistics, or records after termination, except as required by applicable law or as described in the Privacy Policy.</p>
+      <p>22.5 Survival. The following provisions survive termination or expiration of these Terms: Sections 6, 7, 8, 9.4 through 9.8, 11, 12, 18.3, 23, 24, 25, 26, 27, 28, and 29, together with any provision that by its terms applies after termination.</p>
+
+      <h2>23. Disclaimers</h2>
+      <p>23.1 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW:</p>
+      <ul>
+        <li>(a) THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, QUIET ENJOYMENT, OR ARISING FROM COURSE OF DEALING OR USAGE OF TRADE.</li>
+        <li>(b) WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, SECURE, TIMELY, ERROR-FREE, OR FREE OF BUGS, DEFECTS, OR HARMFUL COMPONENTS, OR THAT ANY DEFECT WILL BE CORRECTED.</li>
+        <li>(c) WE DO NOT WARRANT THAT THE SERVICE WILL BE COMPATIBLE WITH YOUR DEVICE, PLATFORM ACCOUNT, OR ANY PARTICULAR HARDWARE OR SOFTWARE, OR THAT IT WILL MEET YOUR EXPECTATIONS.</li>
+        <li>(d) WE DO NOT WARRANT THE ACCURACY, RELIABILITY, OR COMPLETENESS OF ANY CONTENT, LEADERBOARD, STATISTIC, REWARD, OR INFORMATION MADE AVAILABLE THROUGH THE SERVICE.</li>
+        <li>(e) WE DO NOT WARRANT THE CONDUCT OF OTHER PLAYERS, INCLUDING ANY STATEMENT, BEHAVIOR, OR COMMUNICATION OF ANOTHER PLAYER IN VOICE CHAT OR OTHERWISE.</li>
+        <li>(f) WE DO NOT WARRANT ANY THIRD-PARTY SERVICE, INCLUDING ANY PLATFORM, BACKEND, NETWORKING, OR PAYMENT SERVICE USED TO DELIVER THE SERVICE.</li>
+        <li>(g) YOUR USE OF THE SERVICE IS AT YOUR OWN RISK.</li>
+      </ul>
+      <p>23.2 Some jurisdictions do not allow the exclusion of certain warranties. In those jurisdictions, the above exclusions apply to the maximum extent permitted by law, and we provide the minimum warranties required by law.</p>
+      <p>23.3 Nothing in these Terms excludes or limits any warranty, right, or remedy that cannot be excluded or limited under applicable law.</p>
+
+      <h2>24. Limitation of Liability</h2>
+      <p>24.1 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL CRIMSON BYTE STUDIOS LLC, ITS MEMBERS, MANAGERS, EMPLOYEES, AGENTS, LICENSORS, SERVICE PROVIDERS, OR SUPPLIERS BE LIABLE FOR ANY:</p>
+      <ul>
+        <li>(a) INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES;</li>
+        <li>(b) LOSS OF PROFITS, REVENUE, GOODWILL, BUSINESS OPPORTUNITY, OR ANTICIPATED SAVINGS;</li>
+        <li>(c) LOSS OR CORRUPTION OF DATA;</li>
+        <li>(d) LOSS OR UNAVAILABILITY OF THE SERVICE, INCLUDING DOWNTIME, OUTAGES, OR DISCONTINUATION;</li>
+        <li>(e) LOSS OR DEVALUATION OF VIRTUAL CURRENCY, VIRTUAL ITEMS, LEADERBOARD ENTRIES, STATISTICS, OR OTHER IN-GAME PROPERTY;</li>
+        <li>(f) PERSONAL INJURY OR EMOTIONAL DISTRESS ARISING FROM YOUR INTERACTION WITH OTHER PLAYERS OR THEIR CONDUCT IN VOICE CHAT OR OTHERWISE;</li>
+        <li>(g) UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR TRANSMISSIONS OR DATA;</li>
+        <li>(h) ACTS OR OMISSIONS OF ANY THIRD PARTY, INCLUDING ANY THIRD-PARTY SERVICE PROVIDER OR PLATFORM; OR</li>
+        <li>(i) ANY OTHER LOSS OR DAMAGE ARISING OUT OF OR RELATING TO THESE TERMS OR THE SERVICE,</li>
+      </ul>
+      <p>WHETHER BASED IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR ANY OTHER LEGAL THEORY, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+      <p>24.2 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, OUR TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATING TO THESE TERMS OR THE SERVICE WILL NOT EXCEED THE GREATER OF (A) THE TOTAL AMOUNTS YOU PAID TO US FOR THE SERVICE IN THE TWELVE (12) MONTHS IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM, OR (B) ONE HUNDRED U.S. DOLLARS (US $100.00).</p>
+      <p>24.3 The limitations in this Section apply to the fullest extent permitted by applicable law and apply even if any limited remedy fails of its essential purpose.</p>
+      <p>24.4 Nothing in these Terms limits or excludes our liability for fraud, fraudulent misrepresentation, or any liability that cannot be limited or excluded under applicable law. Nothing in these Terms limits any rights you may have under applicable consumer protection law.</p>
+
+      <h2>25. Indemnification</h2>
+      <p>25.1 To the maximum extent permitted by applicable law, you agree to defend, indemnify, and hold harmless Crimson Byte Studios LLC and its members, managers, employees, agents, and successors from and against any claims, liabilities, damages, judgments, awards, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to:</p>
+      <ul>
+        <li>(a) your breach or violation of these Terms;</li>
+        <li>(b) your misuse of the Service, including your use of the Service in violation of law or third-party rights;</li>
+        <li>(c) your violation of any right of a third party, including any intellectual property, privacy, or publicity right;</li>
+        <li>(d) your content or your communications with other players; and</li>
+        <li>(e) any dispute between you and another player or a third party arising from your use of the Service.</li>
+      </ul>
+      <p>25.2 We reserve the right, at our own expense, to assume the exclusive defense and control of any matter subject to indemnification by you, and you agree to cooperate with our defense of such claims.</p>
+      <p>25.3 This Section does not apply to the extent a claim is caused by our own willful misconduct or gross negligence, or to the extent indemnification is prohibited by applicable law.</p>
+
+      <h2>26. Governing Law and Disputes</h2>
+      <p>ATTORNEY REVIEW REQUIRED. This Section has not been reviewed by counsel.</p>
+      <p>26.1 Governing law. These Terms and any dispute arising out of or relating to them or the Service will be governed by the laws of the State of Utah, United States of America, without regard to its conflict of laws principles, except where applicable law requires otherwise.</p>
+      <p>26.2 Informal resolution. Before filing a formal claim, you agree to contact us at crimsonbytestudios@gmail.com and attempt in good faith to resolve the dispute informally for at least thirty (30) days.</p>
+      <p>26.3 Venue. To the maximum extent permitted by applicable law, you and Crimson Byte Studios LLC agree that any legal action or proceeding arising out of or relating to these Terms or the Service will be brought exclusively in the state or federal courts located in the State of Utah, and you consent to the personal jurisdiction of those courts and waive any objection to venue there.</p>
+      <p>26.4 Exceptions. Nothing in this Section requires either party to arbitrate or waive any right to bring an action in small claims court, or prevents a party from seeking injunctive or other equitable relief for the unauthorized use of intellectual property or a breach of Sections 5, 6, 7, 8, or 12.</p>
+      <p>26.5 Class action waiver: NOT INCLUDED pending attorney review.</p>
+      <p>26.6 Arbitration: NOT INCLUDED pending attorney review.</p>
+      <p>26.7 Consumer rights. If you are a consumer in a jurisdiction that provides you mandatory rights that cannot be waived, those rights apply, and this Section applies only to the extent permitted by that law.</p>
+
+      <h2>27. Miscellaneous</h2>
+      <p>27.1 Entire agreement. These Terms, together with the Privacy Policy and any additional terms presented to you in the Service, constitute the entire agreement between you and Crimson Byte Studios LLC regarding the Service, and supersede all prior or contemporaneous agreements regarding the Service.</p>
+      <p>27.2 Severability. If any provision of these Terms is held invalid, illegal, or unenforceable, that provision will be modified to the minimum extent necessary to make it valid and enforceable, or if it cannot be modified, it will be severed from these Terms, and the remaining provisions will remain in full force and effect.</p>
+      <p>27.3 No waiver. Our failure to enforce any provision of these Terms is not a waiver of our right to enforce that or any other provision in the future.</p>
+      <p>27.4 Assignment. You may not assign or transfer these Terms or any rights or obligations under them without our prior written consent. We may assign or transfer these Terms, in whole or in part, without restriction, including in connection with a merger, acquisition, corporate reorganization, or sale of assets.</p>
+      <p>27.5 Relationship of the parties. Nothing in these Terms creates a partnership, joint venture, agency, or employment relationship between you and us.</p>
+      <p>27.6 No third-party beneficiaries. Except as expressly stated, these Terms do not confer any right or remedy on any person other than the parties to them.</p>
+      <p>27.7 Force majeure. We are not liable for any failure or delay in performance caused by causes beyond our reasonable control, including acts of God, natural disasters, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, epidemics, strikes, shortages of transportation, facilities, fuel, energy, labor, or materials, or failures of the internet, telecommunications, or utility services, or the acts or omissions of any third party including any platform or service provider.</p>
+      <p>27.8 Headings. Section headings are for convenience only and do not affect interpretation.</p>
+      <p>27.9 Notices. We may provide notices to you through the Service, through an in-game message, or by other reasonable means. Notices to us must be sent to crimsonbytestudios@gmail.com.</p>
+
+      <h2>28. Contact</h2>
+      <p>
+        Crimson Byte Studios LLC<br>
+        Legal & Support Email: crimsonbytestudios@gmail.com<br>
+        Official Website: <a href="https://bluecatplayz.github.io/blood-floors-site/" target="_blank" rel="noopener">https://bluecatplayz.github.io/blood-floors-site/</a>
+      </p>
+      <p>For legal notices, support requests, privacy-related questions, or other inquiries concerning Blood Floors or these Terms, please contact us using the email address above.</p>
+
+      <h2>29. Agreement Version History</h2>
+      <p>v1.0 - October 2, 2026 - Initial release of the Blood Floors Terms of Service.</p>
+      <p><strong>Current version:</strong> v1.0<br>
+      <strong>Current effective date:</strong> October 2, 2026</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="CrimSonByteStudiosMonkeyLogo.png" alt="Blood Floors Logo" onerror="this.style.display='none'">
+          <span>BLOOD FLOORS</span>
+        </a>
+        <div class="footer-copy">© <span id="year"></span> Crimson Byte Studios LLC. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('tech-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const chars = '$*#@!&<>~+=^§';
+    const colors = ['#f02b3d', '#2bf065', '#ffffff', '#2b8df0']; 
+    const particles = [];
+    const count = Math.floor((width * height) / 80000);
+
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        char: chars[Math.floor(Math.random() * chars.length)],
+        color: colors[Math.floor(Math.random() * colors.length)],
+        size: Math.floor(Math.random() * 40) + 60,
+        speedY: (Math.random() - 0.5) * 0.2,
+        speedX: (Math.random() - 0.5) * 0.2,
+        alpha: Math.random() * 0.35 + 0.15
+      });
+    }
+
+    function animateTech() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.imageSmoothingEnabled = false;
+      particles.forEach(p => {
+        p.y += p.speedY;
+        p.x += p.speedX;
+        if (p.y < -100) p.y = height + 100;
+        if (p.y > height + 100) p.y = -100;
+        if (p.x < -100) p.x = width + 100;
+        if (p.x > width + 100) p.x = -100;
+
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.font = `bold ${p.size}px monospace`;
+        ctx.fillText(p.char, p.x, p.y);
+      });
+      requestAnimationFrame(animateTech);
+    }
+    animateTech();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

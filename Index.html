@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>BLOOD FLOORS — Enter the Dark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090909;
+      --panel: #111111;
+      --text: #f5f2f0;
+      --muted: #a9a2a0;
+      --red: #c51d2b;
+      --red-bright: #f02b3d;
+      --line: rgba(255,255,255,.10);
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: Inter, system-ui, sans-serif; line-height: 1.65;
+      overflow-x: hidden; position: relative;
+    }
+    #tech-canvas {
+      position: fixed; inset: 0; pointer-events: none; z-index: -1; opacity: 0.35;
+      image-rendering: pixelated;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -2;
+      background: radial-gradient(ellipse at 50% 0%, rgba(139, 10, 23, .15), transparent 55%),
+                  linear-gradient(180deg, #0b0a0a 0%, #090909 55%, #0d090a 100%);
+    }
+    a { color: inherit; text-decoration: none; cursor: pointer; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin-inline: auto; }
+    .eyebrow {
+      color: #ff5b67; text-transform: uppercase; letter-spacing: .24em;
+      font-size: .72rem; font-weight: 800;
+    }
+    .display {
+      font-family: "Barlow Condensed", sans-serif; text-transform: uppercase;
+      font-weight: 900; letter-spacing: .015em; line-height: .88;
+    }
+    .topbar {
+      position: sticky; top: 0; z-index: 100; background: rgba(9,9,9,.88);
+      backdrop-filter: blur(16px); border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: .11em; font-size: .88rem; z-index: 101; }
+    .brand-logo {
+      width: 40px; height: 40px; object-fit: cover; border-radius: 6px;
+      border: 1px solid var(--red); box-shadow: 0 0 12px rgba(197,29,43,0.5);
+      background-color: #111; display: block;
+    }
+    .nav-links { display: flex; align-items: center; gap: 27px; color: #c5bfbd; font-size: .82rem; font-weight: 700; z-index: 101; }
+    .nav-links a:hover { color: white; }
+    .nav-cta, .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 12px 18px; background: var(--red); border: 1px solid var(--red);
+      color: white; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem;
+      font-weight: 800; transition: transform .2s, background .2s, border-color .2s; z-index: 101;
+    }
+    .nav-cta:hover, .btn:hover { background: var(--red-bright); border-color: var(--red-bright); transform: translateY(-2px); }
+    .btn.secondary { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.24); }
+    .btn.secondary:hover { background: rgba(255,255,255,.1); border-color: white; }
+    .menu-toggle { display: none; background: none; color: white; border: 1px solid var(--line); padding: 8px 11px; font-size: 1.1rem; cursor: pointer; z-index: 101; }
+    
+    .hero {
+      min-height: min(800px, calc(100svh - 76px)); position: relative; display: grid; align-items: center;
+      isolation: isolate; overflow: hidden; border-bottom: 1px solid var(--line); z-index: 10;
+    }
+    .hero-content { padding: 110px 0 125px; max-width: 800px; }
+    .hero-kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: #ff3446; box-shadow: 0 0 16px #ff3446; }
+    h1 { font-size: clamp(5rem, 13vw, 10.8rem); margin: 0 0 26px; }
+    h1 span { display: block; color: var(--red-bright); }
+    .hero-copy { max-width: 555px; color: #d0c9c7; font-size: clamp(1rem, 1.6vw, 1.15rem); margin: 0 0 30px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; position: relative; z-index: 20; }
+    
+    section { padding: 110px 0; position: relative; z-index: 10; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 35px; margin-bottom: 42px; }
+    .section-head h2 { font-size: clamp(3rem, 7vw, 5.4rem); margin: 10px 0 0; }
+    .section-head p { max-width: 430px; color: var(--muted); margin: 0 0 5px; }
+    
+    .updates-list { border-top: 1px solid var(--line); }
+    .update {
+      display: grid; grid-template-columns: 140px 1fr auto; gap: 30px; align-items: start;
+      padding: 27px 0; border-bottom: 1px solid var(--line);
+    }
+    .update-date { color: #ff6974; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 800; padding-top: 4px; }
+    .update h3 { margin: 0 0 7px; font: 700 1.8rem/1.1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+    .update p { margin: 0; color: var(--muted); font-size: .9rem; max-width: 680px; }
+    .tag { border: 1px solid rgba(255,255,255,.16); padding: 5px 9px; font-size: .65rem; text-transform: uppercase; letter-spacing: .12em; color: #d8d0ce; white-space: nowrap; }
+
+    /* DISCORD COMMUNITY SECTION */
+    .discord-section {
+      position: relative;
+      z-index: 10;
+      padding: 60px 0 110px;
+    }
+    .discord-card {
+      background: linear-gradient(135deg, rgba(88, 101, 242, 0.12) 0%, rgba(197, 29, 43, 0.15) 100%), #111111;
+      border: 1px solid rgba(88, 101, 242, 0.35);
+      border-radius: 16px;
+      padding: 45px 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(88, 101, 242, 0.1);
+    }
+    .discord-card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(88,101,242,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .discord-badge {
+      display: inline-block;
+      background: var(--red);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      box-shadow: 0 0 12px rgba(197, 29, 43, 0.6);
+    }
+    .discord-title {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+      color: #ffffff;
+      letter-spacing: 0.03em;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+    }
+    .discord-text {
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto 30px;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+    .btn-discord {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #5865F2;
+      color: #ffffff;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 34px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 22px rgba(88, 101, 242, 0.5), 0 4px 10px rgba(0,0,0,0.4);
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      z-index: 2;
+    }
+    .btn-discord:hover {
+      background: #4752C4;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 35px rgba(88, 101, 242, 0.85), 0 8px 20px rgba(0,0,0,0.6);
+      border-color: #ffffff;
+    }
+    .btn-discord:active {
+      transform: translateY(1px) scale(0.98);
+    }
+    .discord-icon {
+      width: 26px;
+      height: 26px;
+      transition: transform 0.25s ease;
+    }
+    .btn-discord:hover .discord-icon {
+      transform: rotate(-8deg) scale(1.1);
+    }
+
+    .legal { background: #0e0d0d; border-block: 1px solid var(--line); }
+    .legal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .legal-card { border: 1px solid var(--line); background: var(--panel); padding: 30px; position: relative; z-index: 20; }
+    .legal-card h3 { font: 700 2rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; margin: 17px 0 10px; }
+    .legal-card p { color: var(--muted); font-size: .9rem; min-height: 50px; }
+
+    footer { padding: 35px 0; position: relative; z-index: 100; background: #090909; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .footer-copy { color: #817977; font-size: .75rem; }
+    .footer-links { display: flex; gap: 20px; color: #b7aeac; font-size: .78rem; position: relative; z-index: 101; }
+    .footer-links a:hover { color: white; }
+
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 32px, var(--max)); }
+      .nav-links { display: none; position: absolute; top: 66px; left: 0; right: 0; padding: 20px 22px; background: rgba(9,9,9,.98); border-bottom: 1px solid var(--line); flex-direction: column; z-index: 105; }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: inline-block; }
+      .update { grid-template-columns: 1fr; gap: 10px; }
+      .legal-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="tech-canvas" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home">
+        <img class="brand-logo" src="CrimSonByteStudiosMonkeyLogo.png" alt="Blood Floors Logo" onerror="this.style.display='none'">
+        <span>CRIMSON BYTE / BLOOD FLOORS</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">HOME</a>
+        <a href="#updates">GAME UPDATES</a>
+        <a href="#discord">COMMUNITY</a>
+        <a href="#legal">POLICIES & TERMS</a>
+      </nav>
+      <a class="nav-cta" href="https://discord.gg/gwX3Vcd4TW" target="_blank" rel="noopener">DISCORD ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="hero-content">
+          <div class="hero-kicker eyebrow"><span class="pulse"></span> A VR HORROR EXPERIENCE</div>
+          <h1 class="display">WELCOME TO <span>BLOOD</span> FLOORS</h1>
+          <p class="hero-copy">The lights are failing. The halls feel endless. Step into a multiplayer VR horror experience where every corner could hide a threat.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#updates">VIEW GAME UPDATES ↘</a>
+            <a class="btn secondary" href="#legal">TERMS & PRIVACY</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="updates">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">DEVELOPMENT LOG</div><h2 class="display">GAME UPDATES.</h2></div>
+          <p>Patch notes, event news, and feature rollouts straight from the development floor.</p>
+        </div>
+        <div class="updates-list">
+          <article class="update">
+            <div class="update-date">Halloween Event</div>
+            <div>
+              <h3>🎃 The Halloween Trick-or-Treat Event</h3>
+              <p>Explore the dark, revamped corridors and collect hidden candy scattered across the map! Gather enough candy to unlock the <strong>exclusive Halloween trick-or-treat basket cosmetic</strong> for your character.</p>
+            </div>
+            <span class="tag">Special Event</span>
+          </article>
+          <article class="update">
+            <div class="update-date">New Threat</div>
+            <div>
+              <h3>👻 New Monsters Added</h3>
+              <p>Unidentified entities now stalk the depths of Blood Floors. Stay quiet, manage your lights carefully, and watch your back as you navigate the halls.</p>
+            </div>
+            <span class="tag">Gameplay</span>
+          </article>
+          <article class="update">
+            <div class="update-date">Patch Notes</div>
+            <div>
+              <h3>🐛 Bug Fixes & Improvements</h3>
+              <p>Resolved multiplayer Photon PUN synchronization errors, fixed shadow culling bugs in dark rooms, and optimized overall performance for smoother standalone VR gameplay.</p>
+            </div>
+            <span class="tag">Bug Fixes</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY / DISCORD SECTION -->
+    <section class="discord-section" id="discord">
+      <div class="wrap">
+        <div class="discord-card">
+          <div class="discord-badge">⚡ JOIN THE SQUAD</div>
+          <h2 class="discord-title">BECOME A PART OF THE COMMUNITY!</h2>
+          <p class="discord-text">
+            Hang out with fellow players, get early sneaks of updates, flex your high scores, and chat directly with the devs. Don't miss out on special events!
+          </p>
+          
+          <a href="https://discord.gg/gwX3Vcd4TW" class="btn-discord" target="_blank" rel="noopener">
+            <svg class="discord-icon" viewBox="0 0 127.14 96.36" fill="currentColor">
+              <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0, -3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.14c2.64-27.38-4.51-51.11-18.91-72.14ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.91,53.87,53,48.83,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.91,96.1,53,91.08,65.69,84.69,65.69Z"/>
+            </svg>
+            JOIN OUR DISCORD SERVER
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal" id="legal">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">LEGAL INFORMATION</div><h2 class="display">TERMS & PRIVACY.</h2></div>
+          <p>Review our player guidelines, code of conduct, and privacy terms before entering the game.</p>
+        </div>
+        <div class="legal-grid">
+          <article class="legal-card">
+            <h3>Terms of Service</h3>
+            <p>Rules regarding community conduct, virtual multiplayer safety, account ownership under Crimson Byte Studios LLC, and user responsibilities.</p>
+            <a class="btn secondary" href="terms.html">READ TERMS ↗</a>
+          </article>
+          <article class="legal-card">
+            <h3>Privacy Policy</h3>
+            <p>Details on what telemetry or session data is collected during multiplayer matchmaking and how player safety data is handled.</p>
+            <a class="btn secondary" href="privacy.html">READ PRIVACY POLICY ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>
+        <a class="brand" href="#home">
+          <img class="brand-logo" src="CrimSonByteStudiosMonkeyLogo.png" alt="Blood Floors Logo" onerror="this.style.display='none'">
+          <span>BLOOD FLOORS</span>
+        </a>
+        <div class="footer-copy">© <span id="year"></span> Crimson Byte Studios LLC. All rights reserved.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a><a href="#updates">Updates</a><a href="#discord">Discord</a><a href="#legal">Terms & Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('tech-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const chars = '$*#@!&<>~+=^§';
+    const colors = ['#f02b3d', '#2bf065', '#ffffff', '#2b8df0']; 
+    const particles = [];
+    const count = Math.floor((width * height) / 80000);
+
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        char: chars[Math.floor(Math.random() * chars.length)],
+        color: colors[Math.floor(Math.random() * colors.length)],
+        size: Math.floor(Math.random() * 40) + 60,
+        speedY: (Math.random() - 0.5) * 0.2,
+        speedX: (Math.random() - 0.5) * 0.2,
+        alpha: Math.random() * 0.35 + 0.15
+      });
+    }
+
+    function animateTech() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.imageSmoothingEnabled = false;
+
+      particles.forEach(p => {
+        p.y += p.speedY;
+        p.x += p.speedX;
+        if (p.y < -100) p.y = height + 100;
+        if (p.y > height + 100) p.y = -100;
+        if (p.x < -100) p.x = width + 100;
+        if (p.x > width + 100) p.x = -100;
+
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.font = `bold ${p.size}px monospace`;
+        ctx.fillText(p.char, p.x, p.y);
+      });
+      requestAnimationFrame(animateTech);
+    }
+    animateTech();
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
