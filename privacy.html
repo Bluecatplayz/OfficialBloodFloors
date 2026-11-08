@@ -96,7 +96,7 @@
   <main class="content-wrap">
     <div class="eyebrow">DATA & SECURITY</div>
     <h1>Privacy Policy</h1>
-    <div class="effective-date">Version: 2.0 | Effective Date: October 2, 2026 | Crimson Byte Studios LLC</div>
+    <div class="effective-date">Version: 2.1 | Effective Date: November 7, 2026 | Crimson Byte Studios LLC</div>
 
     <div class="privacy-body">
       <p>Crimson Byte Studios LLC ("Crimson Byte," "we," "us," or "our") respects user privacy and is committed to protecting information associated with users of Blood Floors and its related online services (collectively, the "Service").</p>
@@ -207,6 +207,8 @@
 
       <p><strong>2.11 Information Stored on Your Device</strong><br>
       Blood Floors may store certain information locally on your device using platform storage, including display name, cosmetic selections, quest/collectible progress, event progress, agreement acceptance info, gameplay settings, and access restriction/security action details. Some locally stored info may be synchronized with backend services when required.</p>
+      <p><strong>2.12 Secure Device Registration and Authentication</strong><br>
+      When you use secure device registration or broker-based authentication, Blood Floors may process additional information needed to verify your platform identity, associate your game account with a registered device, and protect authentication services. This may include your Meta User ID; a Meta UserProof obtained through the platform; a device identifier; the device's public key and a derived key identifier; authentication challenge identifiers; hashes of challenge nonces and Meta UserProof values; timestamps and expiration or revocation status; PlayFab account identifiers; broker session hashes; and network information used for abuse prevention and rate limiting. The Meta UserProof is transmitted to the authentication service and Meta for verification. It is processed transiently and is not intentionally stored as raw proof in the broker database or application logs. A one-way hash may be retained temporarily to detect reuse of the same proof. The device's private key is generated and kept on the supported device in protected device storage, such as Android Keystore, and is not transmitted to our servers.</p>
 
       <h2>3. How We Use Information</h2>
       <p>Blood Floors uses collected information to operate, maintain, improve, and secure the Service. Information may be used to:</p>
@@ -253,7 +255,8 @@
         <li><strong>Microsoft Azure PlayFab</strong> (game accounts, cloud backend, data storage, cloud scripting, virtual currency, player inventories, leaderboards, statistics, account services, security verification, and other backend infrastructure);</li>
         <li><strong>Meta</strong> (platform sign-in, platform account identification, game entitlement verification, in-app purchase processing, and platform-related functionality);</li>
         <li><strong>Exit Games / Photon</strong> (multiplayer networking, multiplayer sessions, real-time networking, and voice-chat functionality);</li>
-        <li><strong>Unity</strong> (game engine and runtime technologies used by Blood Floors).</li>
+        <li><strong>Unity</strong> (game engine and runtime technologies used by Blood Floors);</li>
+        <li><strong>Cloudflare, Inc.</strong> (Cloudflare Workers and D1 database hosting for authentication infrastructure, secure device registration, authentication challenges, and related security processing).</li>
       </ul>
       <p>These providers may process information under their own terms and privacy policies.</p>
       <p><strong>5.3 Moderation and Security Alerts</strong><br>
@@ -279,9 +282,11 @@
       <p><strong>7.5 Sale and Sharing:</strong> Blood Floors does not sell personal information or share personal information with third parties for their own direct marketing purposes.</p>
 
       <h2>8. Data Storage and Security</h2>
-      <p><strong>8.1</strong> Information associated with Blood Floors may be stored through Microsoft Azure PlayFab and locally on your device.</p>
+      <p><strong>8.1</strong> Information associated with Blood Floors may be stored through Microsoft Azure PlayFab, Cloudflare Workers and Cloudflare D1, and locally on your device, depending on the feature being used.</p>
       <p><strong>8.2</strong> Crimson Byte Studios uses reasonable administrative, technical, and organizational safeguards designed to protect information against unauthorized access, loss, misuse, alteration, or disclosure. These measures include backend access controls, server-side validation, purchase/entitlement verification, secure-session verification, account security controls, anti-cheat systems, and security monitoring.</p>
       <p><strong>8.3</strong> No method of electronic transmission or storage is completely secure. Crimson Byte Studios cannot guarantee absolute security.</p>
+      <p><strong>8.4</strong> For broker-based authentication and device registration, Cloudflare Workers processes requests and Cloudflare D1 may store registered device public keys, derived device key identifiers, broker session hashes, authentication challenge records, hashed proof-replay identifiers, and rate-limiting records. The broker database is not intended to store device private keys or raw Meta UserProof values.</p>
+      <p><strong>8.5</strong> Cloudflare may receive network metadata, including an IP address, as part of handling a request. The broker uses a derived hash of the client IP address for certain challenge and rate-limiting records rather than storing the raw IP address in those broker records. Cloudflare may separately process network and service metadata under its own privacy and security practices.</p>
 
       <h2>9. Data Retention</h2>
       <p><strong>9.1</strong> We retain information for as long as your game account exists and as long as reasonably necessary for the purposes described in this Privacy Policy.</p>
@@ -289,6 +294,7 @@
       <p><strong>9.3</strong> Moderation records, reports, and security records may be retained for longer where reasonably necessary to enforce our Terms of Service, prevent repeat violations, investigate abuse/fraud, protect the Service, or respond to lawful requests.</p>
       <p><strong>9.4</strong> Information stored locally on your device generally remains until cleared by you or removed through deletion or uninstallation of the application.</p>
       <p><strong>9.5</strong> When information is no longer required, we may delete or de-identify it, except where retention is required or permitted by applicable law, security requirements, fraud prevention, or platform obligations.</p>
+      <p><strong>9.6</strong> For broker-based authentication, Meta UserProof values are processed for verification and are not intentionally retained as raw proof in the broker database or application logs. A one-way hash of a proof is assigned a 24-hour expiration for replay prevention; expired records are subject to backend cleanup. Authentication challenge records are short-lived and are assigned an expiration time. Registered device public keys and associated device records may remain while the device is registered, until revoked or deleted, or as otherwise reasonably necessary for account security and fraud prevention.</p>
 
       <h2>10. Your Rights and Choices</h2>
       <p>Depending on where you live and applicable law, you may have some or all of the following rights regarding your personal information: access, correction, deletion, restriction/objection, withdrawal of consent, data portability, and lodging a complaint with a data-protection authority.</p>
